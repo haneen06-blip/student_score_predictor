@@ -1,0 +1,266 @@
+{
+  "model_name": "Student Exam Score Predictor",
+  "algorithm": "Scikit-Learn Pipeline (StandardScaler + LinearRegression)",
+  "baseline_intercept": 67.2135,
+  "training_metrics": {
+    "r2_score": 0.743,
+    "mae": 1.621,
+    "rmse": 2.037
+  },
+  "features": [
+    {
+      "name": "Attendance",
+      "label": "Class Attendance",
+      "description": "Percentage of lectures and classes attended throughout the term.",
+      "order": 1,
+      "coefficient": 2.284,
+      "mean": 79.9194,
+      "std": 11.5409,
+      "type": "numeric",
+      "min": 60.0,
+      "max": 100.0,
+      "step": 1.0,
+      "unit": "%",
+      "default": 67.0
+    },
+    {
+      "name": "Hours_Studied",
+      "label": "Weekly Study Hours",
+      "description": "Dedicated hours spent on independent coursework and study each week.",
+      "order": 2,
+      "coefficient": 1.7356,
+      "mean": 19.9349,
+      "std": 5.8913,
+      "type": "numeric",
+      "min": 1.0,
+      "max": 44.0,
+      "step": 1.0,
+      "unit": "hours/week",
+      "default": 20.0
+    },
+    {
+      "name": "Previous_Scores",
+      "label": "Previous Exam Score",
+      "description": "Past standardized examination score reflecting prior academic foundation.",
+      "order": 3,
+      "coefficient": 0.677,
+      "mean": 74.9979,
+      "std": 14.4218,
+      "type": "numeric",
+      "min": 50.0,
+      "max": 100.0,
+      "step": 1.0,
+      "unit": "points (0-100)",
+      "default": 66.0
+    },
+    {
+      "name": "Access_to_Resources",
+      "label": "Access to Educational Resources",
+      "description": "Availability of textbooks, computers, syllabus guides, and library materials.",
+      "order": 4,
+      "coefficient": 0.7307,
+      "mean": 1.0967,
+      "std": 0.7006,
+      "type": "categorical",
+      "options": [
+        "Low",
+        "Medium",
+        "High"
+      ],
+      "ordinal_mapping": {
+        "Low": 0,
+        "Medium": 1,
+        "High": 2
+      },
+      "unit": null,
+      "default": "Medium"
+    },
+    {
+      "name": "Parental_Involvement",
+      "label": "Parental Academic Support",
+      "description": "Degree of home engagement, monitoring, and encouragement provided by parents.",
+      "order": 5,
+      "coefficient": 0.6761,
+      "mean": 1.0874,
+      "std": 0.6938,
+      "type": "categorical",
+      "options": [
+        "Low",
+        "Medium",
+        "High"
+      ],
+      "ordinal_mapping": {
+        "Low": 0,
+        "Medium": 1,
+        "High": 2
+      },
+      "unit": null,
+      "default": "Medium"
+    },
+    {
+      "name": "Tutoring_Sessions",
+      "label": "Monthly Tutoring Sessions",
+      "description": "Number of personalized 1-on-1 or group tutoring sessions attended per month.",
+      "order": 6,
+      "coefficient": 0.5869,
+      "mean": 1.4909,
+      "std": 1.2195,
+      "type": "numeric",
+      "min": 0.0,
+      "max": 8.0,
+      "step": 1.0,
+      "unit": "sessions/month",
+      "default": 1.0
+    },
+    {
+      "name": "Parental_Education_Level",
+      "label": "Parental Education Level",
+      "description": "Highest educational qualification attained by the student's parents or guardians.",
+      "order": 7,
+      "coefficient": 0.38,
+      "mean": 0.6906,
+      "std": 0.7766,
+      "type": "categorical",
+      "options": [
+        "High School",
+        "College",
+        "Postgraduate"
+      ],
+      "ordinal_mapping": {
+        "High School": 0,
+        "College": 1,
+        "Postgraduate": 2
+      },
+      "unit": null,
+      "default": "High School"
+    },
+    {
+      "name": "Peer_Influence",
+      "label": "Peer Study Circle Influence",
+      "description": "Academic orientation and discipline of the student's immediate friend group.",
+      "order": 8,
+      "coefficient": 0.3912,
+      "mean": 1.1858,
+      "std": 0.7547,
+      "type": "categorical",
+      "options": [
+        "Negative",
+        "Neutral",
+        "Positive"
+      ],
+      "ordinal_mapping": {
+        "Negative": 0,
+        "Neutral": 1,
+        "Positive": 2
+      },
+      "unit": null,
+      "default": "Positive"
+    },
+    {
+      "name": "Distance_from_Home",
+      "label": "Commute Distance to School",
+      "description": "Relative distance and daily transit duration between home and school.",
+      "order": 9,
+      "coefficient": -0.3197,
+      "mean": 0.5074,
+      "std": 0.6724,
+      "type": "categorical",
+      "options": [
+        "Near",
+        "Moderate",
+        "Far"
+      ],
+      "ordinal_mapping": {
+        "Near": 0,
+        "Moderate": 1,
+        "Far": 2
+      },
+      "unit": null,
+      "default": "Near"
+    },
+    {
+      "name": "Motivation_Level",
+      "label": "Academic Motivation",
+      "description": "Self-reported internal motivation, persistence, and goal orientation.",
+      "order": 10,
+      "coefficient": 0.3681,
+      "mean": 0.9082,
+      "std": 0.6948,
+      "type": "categorical",
+      "options": [
+        "Low",
+        "Medium",
+        "High"
+      ],
+      "ordinal_mapping": {
+        "Low": 0,
+        "Medium": 1,
+        "High": 2
+      },
+      "unit": null,
+      "default": "Medium"
+    },
+    {
+      "name": "Teacher_Quality",
+      "label": "Teaching Quality",
+      "description": "Evaluation of instructor effectiveness, pedagogy clarity, and instructional feedback.",
+      "order": 11,
+      "coefficient": 0.3078,
+      "mean": 1.1906,
+      "std": 0.5976,
+      "type": "categorical",
+      "options": [
+        "Low",
+        "Medium",
+        "High"
+      ],
+      "ordinal_mapping": {
+        "Low": 0,
+        "Medium": 1,
+        "High": 2
+      },
+      "unit": null,
+      "default": "Medium"
+    },
+    {
+      "name": "Extracurricular_Activities",
+      "label": "Extracurricular Participation",
+      "description": "Active involvement in school sports teams, clubs, student council, or arts.",
+      "order": 12,
+      "coefficient": 0.2821,
+      "mean": 0.5941,
+      "std": 0.4911,
+      "type": "categorical",
+      "options": [
+        "No",
+        "Yes"
+      ],
+      "ordinal_mapping": {
+        "No": 0,
+        "Yes": 1
+      },
+      "unit": null,
+      "default": "Yes"
+    },
+    {
+      "name": "Internet_Access",
+      "label": "Home High-Speed Internet",
+      "description": "Availability of reliable internet access at home for online study and research.",
+      "order": 13,
+      "coefficient": 0.2488,
+      "mean": 0.9245,
+      "std": 0.2642,
+      "type": "categorical",
+      "options": [
+        "No",
+        "Yes"
+      ],
+      "ordinal_mapping": {
+        "No": 0,
+        "Yes": 1
+      },
+      "unit": null,
+      "default": "Yes"
+    }
+  ]
+}
